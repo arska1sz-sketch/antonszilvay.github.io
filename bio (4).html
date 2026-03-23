@@ -1,0 +1,388 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bio - Anton Szilvay</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: #ffffff;
+            color: #000;
+        }
+
+        /* Header */
+        header {
+            padding: 40px 20px;
+            border-bottom: 1px solid #f0f0f0;
+            position: sticky;
+            top: 0;
+            background: #ffffff;
+            z-index: 100;
+        }
+
+        .header-content {
+            max-width: 1400px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        h1 {
+            font-size: 28px;
+            font-weight: 600;
+            letter-spacing: 0.5px;
+        }
+
+        nav {
+            display: flex;
+            gap: 40px;
+        }
+
+        nav a {
+            text-decoration: none;
+            color: #000;
+            font-size: 14px;
+            font-weight: 500;
+            transition: opacity 0.3s;
+        }
+
+        nav a:hover {
+            opacity: 0.6;
+        }
+
+        /* Main Container */
+        main {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 60px 20px;
+        }
+
+        .bio-title {
+            font-size: 32px;
+            margin-bottom: 50px;
+            font-weight: 600;
+        }
+
+        /* Bio Section */
+        .bio-text {
+            font-size: 16px;
+            line-height: 1.8;
+            margin-bottom: 80px;
+            color: #333;
+        }
+
+        .bio-text p {
+            margin-bottom: 20px;
+        }
+
+        /* Timeline Section */
+        .timeline {
+            margin-bottom: 80px;
+        }
+
+        .year-section {
+            margin-bottom: 60px;
+        }
+
+        .year-header {
+            font-size: 28px;
+            font-weight: 600;
+            margin-bottom: 40px;
+            padding-bottom: 20px;
+            border-bottom: 2px solid #000;
+        }
+
+        .year-info {
+            font-size: 15px;
+            line-height: 1.7;
+            margin-bottom: 30px;
+            color: #333;
+        }
+
+        .exhibitions-section {
+            margin-top: 30px;
+        }
+
+        .exhibitions-title {
+            font-size: 14px;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: 20px;
+            color: #666;
+        }
+
+        .exhibition {
+            margin-bottom: 30px;
+            padding-bottom: 25px;
+            border-bottom: 1px solid #f0f0f0;
+        }
+
+        .exhibition:last-child {
+            border-bottom: none;
+        }
+
+        .exhibition-title {
+            font-size: 16px;
+            font-weight: 600;
+            margin-bottom: 8px;
+        }
+
+        .exhibition-type {
+            font-size: 13px;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            color: #666;
+            margin-bottom: 8px;
+        }
+
+        .exhibition-details {
+            font-size: 14px;
+            line-height: 1.6;
+            color: #555;
+            margin-bottom: 8px;
+        }
+
+        .exhibition-dates {
+            font-size: 13px;
+            color: #666;
+            font-style: italic;
+        }
+
+        .exhibition-description {
+            font-size: 14px;
+            line-height: 1.6;
+            color: #555;
+            margin-top: 12px;
+        }
+
+        /* Footer */
+        footer {
+            background: #f9f9f9;
+            padding: 60px 20px;
+            border-top: 1px solid #f0f0f0;
+            margin-top: 80px;
+        }
+
+        .footer-content {
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+
+        .contact-section {
+            margin-bottom: 40px;
+        }
+
+        .contact-section h3 {
+            font-size: 14px;
+            font-weight: 600;
+            margin-bottom: 10px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .contact-section p {
+            font-size: 16px;
+            line-height: 1.6;
+        }
+
+        .contact-section a {
+            color: #000;
+            text-decoration: none;
+            border-bottom: 1px solid #000;
+        }
+
+        .contact-section a:hover {
+            opacity: 0.6;
+        }
+
+        .social-links {
+            display: flex;
+            gap: 30px;
+            margin-top: 30px;
+        }
+
+        .social-links a {
+            width: 40px;
+            height: 40px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border: 1px solid #000;
+            text-decoration: none;
+            color: #000;
+            transition: background 0.3s;
+            font-size: 14px;
+        }
+
+        .social-links a:hover {
+            background: #000;
+            color: #fff;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            header {
+                padding: 25px 15px;
+            }
+
+            .header-content {
+                flex-direction: column;
+                gap: 20px;
+            }
+
+            h1 {
+                font-size: 22px;
+            }
+
+            nav {
+                gap: 15px;
+                flex-wrap: wrap;
+                justify-content: center;
+            }
+
+            nav a {
+                font-size: 13px;
+            }
+
+            main {
+                padding: 40px 15px;
+            }
+
+            .bio-title {
+                font-size: 22px;
+                margin-bottom: 40px;
+            }
+
+            .bio-text {
+                font-size: 15px;
+            }
+
+            .year-header {
+                font-size: 24px;
+            }
+
+            .exhibition-title {
+                font-size: 15px;
+            }
+
+            .contact-section {
+                margin-bottom: 30px;
+            }
+
+            .contact-section h3 {
+                font-size: 13px;
+                margin-bottom: 12px;
+            }
+
+            .contact-section p {
+                font-size: 16px;
+            }
+
+            .social-links {
+                gap: 15px;
+            }
+
+            .social-links a {
+                width: 50px;
+                height: 50px;
+                font-size: 14px;
+                border-width: 2px;
+            }
+
+            footer {
+                padding: 40px 15px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            h1 {
+                font-size: 20px;
+            }
+
+            nav a {
+                font-size: 12px;
+            }
+
+            .bio-title {
+                font-size: 20px;
+            }
+
+            .bio-text {
+                font-size: 14px;
+            }
+
+            .year-header {
+                font-size: 22px;
+            }
+
+            .contact-section p {
+                font-size: 15px;
+            }
+
+            .social-links a {
+                width: 45px;
+                height: 45px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="header-content">
+            <h1>ANTON SZILVAY</h1>
+                        <nav>
+                <a href="index.html">Portfolio</a>
+                <a href="bio.html">Bio</a>
+                <a href="coming-soon.html">Coming Soon</a>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <h2 class="bio-title">Bio</h2>
+
+        <div class="bio-text">
+            <p>I am a visual artist based in Kankaanpää, Finland, currently studying fine arts at Satakunnan University of Applied Sciences. Through grotesque yet empathetic characters, my work explores the inner movements of the mind—thoughts, emotions, and psychological states that blur the line between reality and the subconscious.</p>
+            
+            <p>Working primarily with oil and acrylic, I blend sensitivity, irony, and raw physicality. My practice spans over eleven years, including formal training at Helsinki's Art School, where I completed the comprehensive art education program and exhibited my graduation work in 2021.</p>
+        </div>
+
+        <div class="timeline">
+            <div class="year-section">
+                <h3 class="year-header">2026</h3>
+
+                <div class="exhibitions-section">
+                    <h4 class="exhibitions-title">Solo Shows</h4>
+                    
+                    <div class="exhibition">
+                        <div class="exhibition-title">Fluctuations</div>
+                        <div class="exhibition-type">Solo Show</div>
+                        <div class="exhibition-details">Solo exhibition of oil and acrylic paintings</div>
+                        <div class="exhibition-dates">17.8.– 12.10.2026</div>
+                        <div class="exhibition-description">A solo exhibition exploring everyday human life and inner emotional experiences. The works transform thoughts, feelings, and states of mind into visual forms, movements, and rhythms. Built around the theme of constant change and motion, where nothing remains entirely permanent or still.</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <div class="footer-content">
+            <div class="contact-section">
+                <h3>Get in Touch</h3>
+                <p>Email: <a href="/cdn-cgi/l/email-protection#adccc3d9c2c383ded7c4c1dbccd4edcac0ccc4c183cec2c0"><span class="__cf_email__" data-cfemail="fa9b948e9594d4898093968c9b83ba9d979b9396d4999597">[email&#160;protected]</span></a></p>
+            </div>
+            
+            <div class="contact-section">
+                <h3>Follow</h3>
+                <div class="social-links">
+                    <a href="https://www.instagram.com/a
